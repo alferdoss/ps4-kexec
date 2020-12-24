@@ -180,12 +180,12 @@
 #define kern_off_kern_reboot						0x10D390
 
 #elif defined PS4_7_02
-#define kern_off_printf								0x0BC730
+#define kern_off_printf								0x0BC730 
 #define kern_off_snprintf 							0x0BCA30
 #define kern_off_copyin								0x02F230
 #define kern_off_copyout							0x02F140
 #define kern_off_copyinstr							0x02F6E0
-#define kern_off_kmem_alloc_contig					0x1170F0
+#define kern_off_kmem_alloc_contig					0x430780
 #define kern_off_kmem_free							0x1172C0
 #define kern_off_pmap_extract						0x3DED30
 #define kern_off_pmap_protect						0x3E18A0
@@ -205,6 +205,6 @@
 #define kern_off_dmpdpi								0x22C5260
 #define kern_off_eap_hdd_key						0x26E0CD0
 #define kern_off_edid								0x27645E0
-#define kern_off_wlanbt							    0
+#define kern_off_wlanbt							    0x0DECB0
 #define kern_off_kern_reboot						0x2CD780
 #endif
