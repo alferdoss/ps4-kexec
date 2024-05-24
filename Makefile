@@ -3,11 +3,11 @@ CC = $(TOOLCHAIN_PREFIX)gcc
 AR = $(TOOLCHAIN_PREFIX)ar
 OBJCOPY = $(TOOLCHAIN_PREFIX)objcopy
 
-CFLAGS=-DPS4_6_72 -DKASLR -DNO_SYMTAB
+CFLAGS=-DPS4_9_03 -DKASLR -DNO_SYMTAB -DDO_NOT_REMAP_RWX
 CFLAGS += -march=btver2 -masm=intel -std=gnu11 -ffreestanding -fno-common \
 	-fPIE -pie -fno-stack-protector -fomit-frame-pointer -nostdlib -nostdinc \
 	-fno-asynchronous-unwind-tables \
-	-Os -Wall -Werror -Wl,--build-id=none,-T,kexec.ld,--nmagic \
+	-Os -Wall -Werror -Wl,--no-dynamic-linker,--build-id=none,-T,kexec.ld,--nmagic \
 	-mcmodel=small -mno-red-zone -m64
 
 SOURCES := kernel.c kexec.c linux_boot.c linux_thunk.S uart.c firmware.c \
