@@ -1,3 +1,5 @@
+#ifndef MAGIC_H
+#define MAGIC_H
 #ifdef PS4_3_55
 
 #define kern_off_printf 0x1df550
@@ -276,3 +278,4 @@
 #define kern_off_pstate_before_shutdown 0x198650
 
 #endif
+#endif // MAGIC_H
