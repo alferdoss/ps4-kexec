@@ -13,15 +13,15 @@
 
 #include "types.h"
 
-#define SYS_KEXEC 153
+#define SYS_KEXEC       153
 #define SYS_KEXEC_NARGS 5
 
 struct sys_kexec_args {
-	void *image;
-	size_t image_size;
-	void *initramfs;
-	size_t initramfs_size;
-	char *cmd_line;
+    void *image;
+    size_t image_size;
+    void *initramfs;
+    size_t initramfs_size;
+    char *cmd_line;
 };
 
 typedef int (*sys_kexec_t)(void *td, struct sys_kexec_args *uap);
@@ -31,7 +31,6 @@ int sys_kexec(void *td, struct sys_kexec_args *uap);
 
 int kernel_init(void *early_printf);
 
-int kexec_init(void *early_printf, sys_kexec_t *sys_kexec_ptr)
-    __attribute__ ((section (".init")));
+int kexec_init(void *early_printf, sys_kexec_t *sys_kexec_ptr) __attribute__((section(".init")));
 
 #endif
